@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="services_custom.odooNewServices">
+        <div>
+            <Layout display="display">
+                <div class="row p-3">
+                    <div class="col col-lg-3">
+                        <h2>Basic Services</h2>
+                        <table class="table border">
+                            <tr>
+                                <th>String</th>
+                                <td t-esc="basicServices.string"></td>
+                            </tr>
+                            <tr>
+                                <th>Boolean</th>
+                                <td t-esc="basicServices.boolean"></td>
+                            </tr>
+                            <tr>
+                                <th>Integer</th>
+                                <td t-esc="basicServices.integer"></td>
+                            </tr>
+                            <tr>
+                                <th>Float</th>
+                                <td t-esc="basicServices.float"></td>
+                            </tr>
+                            <tr>
+                                <th>Array</th>
+                                <td t-esc="basicServices.array"></td>
+                            </tr>
+                            <tr>
+                                <th>Object</th>
+                                <td t-esc="basicServices.object.key"></td>
+                            </tr>
+                            <tr>
+                                <th>Function</th>
+                                <td t-esc="basicServices.function()"></td>
+                            </tr>
+                            <tr>
+                                <th>Simple Function</th>
+                                <td t-esc="basicServices.simple_function()"></td>
+                            </tr>
+                            <tr>
+                                <th>Arrow Function</th>
+                                <td t-esc="basicServices.arrow_function()"></td>
+                            </tr>
+                            <tr>
+                                <th>HTML</th>
+                                <td t-out="basicServices.html"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col col-lg-3">
+                        <h2>Dashboard Service</h2>
+                        <div class="d-flex flex-row p-3 mb-2 border rounded text-center align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <div style="font-size:60pt;">
+                                    <span class="fa fa-users"></span>
+                                </div>
+                                <div class="ms-5">
+                                    <h2 class="mb-0">Partners</h2>
+                                    <div class="text-primary lh-1" style="font-size:50pt;"><span t-esc="dashboard_data.partners"/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row p-3 mb-2 border rounded text-center align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <div style="font-size:60pt;">
+                                    <span class="fa fa-user"></span>
+                                </div>
+                                <div class="ms-5">
+                                    <h2 class="mb-0">Customers</h2>
+                                    <div class="text-primary lh-1" style="font-size:50pt;"><span t-esc="dashboard_data.customers"/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row p-3 mb-2 border rounded text-center align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <div style="font-size:60pt;">
+                                    <span class="fa fa-user"></span>
+                                </div>
+                                <div class="ms-5">
+                                    <h2 class="mb-0">Individuals</h2>
+                                    <div class="text-primary lh-1" style="font-size:50pt;"><span t-esc="dashboard_data.individuals"/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row p-3 mb-2 border rounded text-center align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <div style="font-size:60pt;">
+                                    <span class="fa fa-map-marker"></span>
+                                </div>
+                                <div class="ms-5">
+                                    <h2 class="mb-0">Locations</h2>
+                                    <div class="text-primary lh-1" style="font-size:50pt;"><span t-esc="dashboard_data.locations"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <h2>Simple Mail Services</h2>
+                        <button class="bth btn-primary" t-on-click="openSimpleMail">Open Simple mail</button>
+                    </div>
+                </div>
+            </Layout>
+        </div>
+    </t>
+</templates>

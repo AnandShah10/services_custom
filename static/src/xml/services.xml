@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="services_custom.odooServices">
+        <div t-attf-class="vh-100 #{ state.dark_theme == 'true' ? 'bg-dark' : '' }">
+            <Layout display="display">
+                <div class="row">
+                    <div class="col m-3">
+                        <button class="btn btn-primary" t-on-click="showNotification">Notification</button>
+                        <button class="btn btn-primary ms-2" t-on-click="showDialog">Dialog</button>
+                        <button class="btn btn-primary ms-2" t-on-click="showEffect">Effect</button>
+                        <button class="btn btn-primary ms-2" t-on-click="setCookieService">Cookie</button>
+                        <button class="btn btn-primary ms-2" t-on-click="getHttpService">Http</button>
+                        <button class="btn btn-primary ms-2" t-on-click="getRPCService">RPC</button>
+                        <button class="btn btn-primary ms-2" t-on-click="getORMService">ORM</button>
+                        <button class="btn btn-primary ms-2" t-on-click="getActionService">Action</button>
+                        <button t-attf-class="btn #{ state.debug != '1' ? 'btn-primary' : 'btn-success'} ms-2"
+                                t-on-click="getRouterService">Router
+                        </button>
+                        <button class="btn btn-primary ms-2" t-on-click="getUserService">User</button>
+                        <button class="btn btn-primary ms-2" t-on-click="getCompanyService">Company</button>
+<!--                        <button class="btn btn-primary ms-2" t-on-click="">Title</button>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table mx-4" t-if="state.http_data">
+                            <tr>
+                                <th>Brand</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr t-foreach="state.http_data" t-as="data" t-key="data.id">
+                                <td t-esc="data.title"/>
+                                <td t-esc="data.description"/>
+                            </tr>
+                        </table>
+                        <table class="table mx-4" t-if="state.rpc_data">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                            <tr t-foreach="state.rpc_data" t-as="data" t-key="data.id">
+                                <td t-esc="data.name"/>
+                                <td t-esc="data.email"/>
+                            </tr>
+                        </table>
+                        <table class="table mx-4" t-if="state.orm_data">
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr t-foreach="state.orm_data" t-as="data" t-key="data.id">
+                                <td t-esc="data.display_name"/>
+                                <td t-esc="data.description"/>
+                            </tr>
+                        </table>
+                        <span t-esc="state.user_data"></span>
+                        <span t-esc="state.company_data"></span>
+
+                    </div>
+                </div>
+            </Layout>
+        </div>
+    </t>
+</templates>
